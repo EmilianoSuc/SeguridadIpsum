@@ -8,6 +8,6 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
 <body>
-    <h1>HOLA MUNDOOOOO</h1>
+    <h1>Formulario</h1>
 </body>
 </html>

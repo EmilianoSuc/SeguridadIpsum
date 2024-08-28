@@ -29,63 +29,75 @@
     <script src="../assets/js/config.js"></script>
 </head>
     <body>
-        <div class="row " style="align-content: center">
-            <div class="col-md-6">
+        <div class="row justify-content-center" style="align-content: center;margin: 50px;">
+            <div class="col-md-6  justify-content-center">
               <div class="card mb-4">
                 <h5 class="card-header">Registrate a WePlot</h5>
-                <div class="card-body demo-vertical-spacing demo-only-element">
-                  <div class="input-group input-group-merge">
-                    <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search..."
-                      aria-label="Search..."
-                      aria-describedby="basic-addon-search31"
-                    />
-                  </div>
-                  <div class="form-password-toggle">
-                    <label class="form-label" for="basic-default-password32">Contraseña</label>
-                    <div class="input-group input-group-merge">
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="basic-default-password32"
-                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                        aria-describedby="basic-default-password"/>
-                      <span class="input-group-text cursor-pointer" id="basic-default-password"
-                        ><i class="bx bx-hide"></i
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Recipient's username"
-                      aria-label="Recipient's username"
-                      aria-describedby="basic-addon33"
-                    />
-                    <span class="input-group-text" id="basic-addon33">@example.com</span>
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <span class="input-group-text" id="basic-addon34">https://example.com/users/</span>
-                    <input type="text" class="form-control" id="basic-url3" aria-describedby="basic-addon34" />
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <span class="input-group-text">$</span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="100"
-                      aria-label="Amount (to the nearest dollar)"
-                    />
-                    <span class="input-group-text">.00</span>
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <span class="input-group-text">With textarea</span>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
-                  </div>
+                <div class="card-body">
+                    <form action="{{ route('register.custom') }}" method="POST">
+                        @csrf
+                        <div class="form-group mb-3">                                 
+                            <label class="form-label" for="basic-default-password32">Nombre</label>
+                            <input type="text" placeholder="Nombre" id="name" class="form-control" name="nombre"
+                                required autofocus>
+                            @if ($errors->has('nombre'))
+                            <span class="text-danger">{{ $errors->first('nombre') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group mb-3">                                 
+                            <label class="form-label" for="basic-default-password32">Apellido</label>
+                            <input type="text" placeholder="Apellido" id="name" class="form-control" name="nombre"
+                                required autofocus>
+                            @if ($errors->has('nombre'))
+                            <span class="text-danger">{{ $errors->first('nombre') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group mb-3">                                 
+                            <label class="form-label" for="basic-default-password32">Correo</label>
+                            <input type="text" placeholder="Coreo" id="email_address" class="form-control"
+                                name="correo" required autofocus>
+                            @if ($errors->has('correo'))
+                            <span class="text-danger">{{ $errors->first('correo') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group mb-3">                                 
+                            <label class="form-label" for="basic-default-password32">Télefono</label>
+                            <input type="tel" placeholder="123-456-7890" id="name" class="form-control" name="nombre"
+                                required autofocus>
+                            @if ($errors->has('nombre'))
+                            <span class="text-danger">{{ $errors->first('nombre') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group mb-3">                                 
+                            <label class="form-label" for="basic-default-password32">País</label>
+                            <input type="text" placeholder="Escriba su país" id="name" class="form-control" name="nombre"
+                                required autofocus>
+                            @if ($errors->has('nombre'))
+                            <span class="text-danger">{{ $errors->first('nombre') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-password-toggle form-group  mb-3">
+                            <label class="form-label" for="basic-default-password32">Contraseña</label>
+                            <div class="input-group input-group-merge">
+                              <input
+                                type="password"
+                                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                id="password"
+                                class="form-control"
+                                aria-describedby="basic-default-password"
+                                name="contrasena" required/>
+                              <span class="input-group-text cursor-pointer" id="basic-default-password"
+                                ><i class="bx bx-hide"></i
+                              ></span>
+                              @if ($errors->has('contrasena'))
+                              <span class="text-danger">{{ $errors->first('contrasena') }}</span>
+                              @endif
+                            </div>
+                        </div>                       
+                        <div class="d-grid mx-auto">
+                            <button type="submit" class="btn btn-dark btn-block">Registrarse</button>
+                        </div>
+                    </form>
                 </div>
               </div>
             </div>

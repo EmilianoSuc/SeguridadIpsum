@@ -14,11 +14,11 @@ class Usuarios extends Model
         'Correo',
         'Telefono',
         'Pais',
-        'Comida_fav',
-        'Artista_fav',
-        'Lugar_fav',
-        'Color_fav',
-        'Contraseña',
+        'Comiada_Fav',
+        'Artista_Fav',
+        'Lugar_Fav',
+        'Color_Fav',
+        'Contrasena',
     ];
     use HasFactory;
 }

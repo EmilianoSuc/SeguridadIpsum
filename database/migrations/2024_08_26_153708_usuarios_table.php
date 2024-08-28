@@ -15,15 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('Apellido');
-            $table->string('Correo');
+            $table->string('Correo')->unique();
             $table->string('Telefono');
             $table->string('Pais');
             $table->string('comiada_Fav');
             $table->string('Artista_Fav');
             $table->string('Lugar_Fav');
             $table->string('Color_Fav');
-            $table->string('Contraseña');
+            $table->string('Contrasena');
             $table->string('Imagen');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

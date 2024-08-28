@@ -18,3 +18,11 @@ use App\Http\Controllers\UsuarioController;
 Route::get('/', function () {
     return view('Registro');
 });
+
+Route::get('/Login', function () {
+    return view('Registro');
+});
+
+Route::get('/Datos', function () {
+    return view('Datos');
+});
